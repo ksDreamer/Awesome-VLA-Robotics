@@ -14,12 +14,20 @@ Following are the list and my notes.
 
 [RT-2](https://robotics-transformer2.github.io) by Google Deepmind, 2023
 * [[paper](https://robotics-transformer2.github.io/assets/rt2.pdf)]
-* Developed from previous [RT-1](https://robotics-transformer1.github.io)(simple LLM planning) and PaLM-E(LLM with knowledge from robotics field)
-* A great work for robotics. Inspired from SayCan and RT-2, we have many works in robot leanrning, manipulation and perception. Later we have Open-X Embodiment dataset and RT-X project.
+* Developed from previous [RT-1](https://robotics-transformer1.github.io)(an efficient Transformer-based architecture designed for robotic control) and PaLM-E(LLM), RT-2 is a large vision-language model co-fine-tuned to output robot **actions** as natural language tokens.
+* A great work in robotics. Later we have [Open-X Embodiment](https://robotics-transformer-x.github.io) project and RT-X dataset.
 
-[ReKep](https://rekep-robot.github.io) by Standford Feifei Li, 2024
+From SayCan and RT-2 on, we have many excellent work using VLA in robot learning, manipulation and perception.
+
+For example, Stanford, Feifei Li's lab has proposed lots of work about vision and spatial intelligence in robotics manipulation tasks. Here are some:
+
+[VoxPoser](https://voxposer.github.io), CoRL 2023 (Oral)
+* [[paper](https://arxiv.org/abs/2307.05973)] | [[code](https://github.com/huangwl18/VoxPoser)]
+* label affordances and constraints in 3D perceptual space for zero-shot robot manipulation in the real world.
+
+[ReKep](https://rekep-robot.github.io), CoRL 2024 (Best Paper)
 * [[paper](https://arxiv.org/abs/2409.01652)] | [[code](https://github.com/huangwl18/ReKep)]
-* Using LVM(large vision model) such as [dinov2](https://ai.meta.com/blog/dino-v2-computer-vision-self-supervised-learning/) and [sam2](https://ai.meta.com/sam2/), combined with VLM(Vision Language Model) such as [GPT-4o](https://openai.com/index/hello-gpt-4o/), to generate constraint, so as to plan robot manipulation tasks.
+* Using LVM(large vision model) such as [dinov2](https://ai.meta.com/blog/dino-v2-computer-vision-self-supervised-learning/) and [sam2](https://ai.meta.com/sam2/), combined with VLM(Vision Language Model) such as [GPT-4o](https://openai.com/index/hello-gpt-4o/), to percept input(semantic and vision), generate constraint, **finally plan tasks for robot manipulation**.
 * Constraints: 1. candidate keypoint for manipulation. 2. sub-goal constraint for multi-tasks 3. path constraint for space-varying and pose-demanding tasks
 
 
