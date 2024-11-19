@@ -1,34 +1,54 @@
 # Awesome-VLA-Robotics
 A list and my notes about VLA(Vision Language Model) on Robotics.  
 
-The rapid development of multi-modal language models (segment  anything model, GPT-4o, etc.) has made great contribution in STEM and human's life, including Robotics. More and more work utilize Language Model's power to enhance robot's ability. While the basic executation ability(low level aspect) such as actuator and electicity is independent, the perception and planning ability(high level aspect) such as sensing and task arrangement can be highly improved by VLA.
+The rapid development of multi-modal foundation models ([dinov2](https://ai.meta.com/blog/dino-v2-computer-vision-self-supervised-learning/), [sam2]( https://ai.meta.com/sam2/), [GPT-4o](https://openai.com/index/hello-gpt-4o/), AnyGrasp, etc.) has made great contribution in STEM area, including Robotics. More and more work utilize Language Model to enhance robot's ability. Although the basic executation ability(low level aspect) such as actuator and electicity is irrelevant, the perception and planning ability(high level aspect) such as sensing and long tasks arrangement can be highly improved by VLA.
+
 Notice: VLA here is a big range containing LLM(Large Language Model), VLM(Vision Language Model), VLA(Vision Language Action), FM(Foundation Model), LVM(Large Vision Model), etc.
 
+Following are the list and my notes, containing the official website links and my understanding.
 
-Following are the list and my notes.
+SayCan, **Do As I Can, Not As I Say**:  Grounding Language in Robotic Affordances
 
-[SayCan](https://say-can.github.io) by Google Deepmind, 2022
-* [[paper](https://say-can.github.io/assets/palm_saycan.pdf)] | [[code](https://github.com/google-research/google-research/tree/master/saycan)]
-* The very first project utilizing LLM and VLM to plan robot tasks. It introduced a planning framework combining LLM semantic understanding and vision perception of affordance.
+* by Google Deepmind, 2022
 
-[RT-2](https://robotics-transformer2.github.io) by Google Deepmind, 2023
-* [[paper](https://robotics-transformer2.github.io/assets/rt2.pdf)]
-* Developed from previous [RT-1](https://robotics-transformer1.github.io)(an efficient Transformer-based architecture designed for robotic control) and PaLM-E(LLM), RT-2 is a large vision-language model co-fine-tuned to output robot **actions** as natural language tokens.
-* A great work in robotics. Later we have [Open-X Embodiment](https://robotics-transformer-x.github.io) project and RT-X dataset.
+* [[website](https://say-can.github.io)] | [[paper](https://say-can.github.io/assets/palm_saycan.pdf)] | [[code](https://github.com/google-research/google-research/tree/master/saycan)]
+* The very first well-known project utilizing LLM to plan robot tasks. 
+* Given a high-level instruction, SayCan combines **probabilities from a language model (representing the probability that a skill is useful for the instruction) with the probabilities from a value function (representing the probability of successfully executing said skill)** to select the skill to perform.
+![saycan_decision_making](images/saycan_decision_making.png)
+* Atomic/individual behaviors trained by BC or RL are capable of low-level visuomotor control. 
+* A skill that is both useful and possible.
+![saycan_language_and_affordance](images/saycan_language_and_affordance.png)
+* TODO: what's the vision module of SayCan?
 
-From SayCan and RT-2 on, we have many excellent work using VLA in robot learning, manipulation and perception.
 
-For example, Stanford, Feifei Li's lab has proposed lots of work about vision and spatial intelligence in robotics manipulation tasks. Here are some:
+**RT-2: Vision-Language-Action Models** Transfer Web Knowledge to Robotic Control
 
-[VoxPoser](https://voxposer.github.io), CoRL 2023 (Oral)
-* [[paper](https://arxiv.org/abs/2307.05973)] | [[code](https://github.com/huangwl18/VoxPoser)]
-* label affordances and constraints in 3D perceptual space for zero-shot robot manipulation in the real world.
+* by Google Deepmind, 2023
 
-[ReKep](https://rekep-robot.github.io), CoRL 2024 (Best Paper)
-* [[paper](https://arxiv.org/abs/2409.01652)] | [[code](https://github.com/huangwl18/ReKep)]
-* Using LVM(large vision model) such as [dinov2](https://ai.meta.com/blog/dino-v2-computer-vision-self-supervised-learning/) and [sam2](https://ai.meta.com/sam2/), combined with VLM(Vision Language Model) such as [GPT-4o](https://openai.com/index/hello-gpt-4o/), to percept input(semantic and vision), generate constraint, **finally plan tasks for robot manipulation**.
-* Constraints: 1. candidate keypoint for manipulation. 2. sub-goal constraint for multi-tasks 3. path constraint for space-varying and pose-demanding tasks
+* [[website](https://robotics-transformer2.github.io)] | [[paper](https://robotics-transformer2.github.io/assets/rt2.pdf)]
+* A large vision-language model co-finetuned to output robot **actions** as natural language tokens. It represent robot actions as another language, which can be cast into text tokens and trained together with Internet-scale vision-language datasets.
+![rt2_overview](images/rt2_overview.png)
+* The robot data includes the current image, language command and the robot action at the particular time step.
+![rt2_robot_action_data](images/rt2_robot_action_data.png)
+* Developed from previous [RT-1](https://robotics-transformer1.github.io)(an efficient Transformer-based architecture designed for robotic control) and PaLM-E(LLM with web scale knowledge). RT-2 is a great work using VLA in robotics. Later we have [Open-X Embodiment](https://robotics-transformer-x.github.io) project and RT-X dataset.
+![rt2_open_x_embodiment](images/rt2_open_x_embodiment.png)
 
+From SayCan and RT-2 on, many excellent work using VLA appear in robot learning, manipulation and perception. For example, in Stanford, Feifei Li's lab has proposed lots of work about vision and spatial intelligence in robotics manipulation tasks. Here are some:
+
+VoxPoser, CoRL 2023 (Oral)
+
+* [[website](https://voxposer.github.io)] | [[paper](https://arxiv.org/abs/2307.05973)] | [[code](https://github.com/huangwl18/VoxPoser)]
+* Label affordances and constraints in 3D perceptual space for zero-shot robot manipulation in the real world.
+* TODO:more details
+
+ReKep, CoRL 2024 (Best Paper)
+
+* [[website](https://rekep-robot.github.io)] | [[paper](https://arxiv.org/abs/2409.01652)] | [[code](https://github.com/huangwl18/ReKep)]
+* Using LVM(dinov2 and sam2), combined with VLM(GPT-4o) to percept semantic and vision input,  generate constraint, **finally plan tasks for robot manipulation**.
+* The constraints are: 1. candidate keypoint for grasping and moving target. 2. sub-goal constraint for multi-tasks 3. path constraint for space-varying and pose-demanding tasks
+* The official github repo has a simulation version using OmniGibison, a platform from Isaac Sim. It doesn't have a complete version for real world implement. But many modules(vision part to get keypoint, path constraint, sub-goal devision, etc.) are meaningful.
+
+TODO: COPA
 
 
 # Recommended Resource
