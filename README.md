@@ -1,9 +1,8 @@
 # Awesome-VLA-Robotics
 A list and my notes about VLA(Vision Language Model) on Robotics.  
 
-There are more and more work utilizing Language Model's power to enhance robot's ability. While the basic executation ability(low level aspect) such as actuator and electicity is independent, the perception and planning ability(high level aspect) such as sensing and task arrangement can be highly updated by VLA.  TODO: What about the middle layers(locomotion, manipulation)? What is the deviding principle.  
-Aside, in motion planning and control field, the RL-based method is having more and more attention than traditional dynamics and kinematic model based control method.
-The VLA here is a big topic, containing LLM(Large Language Model), VLM(Vision Language Model), VLA(Vision Language Action), FM(Foundation Model), LVM(Large Vision Model), etc.
+The rapid development of multi-modal language models (segment  anything model, GPT-4o, etc.) has made great contribution in STEM and human's life, including Robotics. More and more work utilize Language Model's power to enhance robot's ability. While the basic executation ability(low level aspect) such as actuator and electicity is independent, the perception and planning ability(high level aspect) such as sensing and task arrangement can be highly improved by VLA.
+Notice: VLA here is a big range containing LLM(Large Language Model), VLM(Vision Language Model), VLA(Vision Language Action), FM(Foundation Model), LVM(Large Vision Model), etc.
 
 
 Following are the list and my notes.
@@ -32,12 +31,16 @@ For example, Stanford, Feifei Li's lab has proposed lots of work about vision an
 
 
 
+# Recommended Resource
+1. Springer Handbook of Robotics, 2nd 2016  
+A wikipedia of robotics. Although it's published in 2016, the contents insides are very valuable and not outdated, helping you build up basic understanding and wide-range knowledge of robotics.
+
+
 
 
 ---
-TODO: Diffusion Policy, Cheng-Chi, Diffusion model on Robotics.
-
-
-
-
-
+TODO: 
+1. Diffusion Policy, Cheng-Chi, Diffusion model on Robotics.
+2. Small Language Model/Edge AI/On-Device Intelligence + Robotics
+3. What about the middle layers(locomotion, manipulation)? What is the deviding principle.  
+4. Learning-based and Model-based in motion planning and control field.the RL-based method is having more and more attention than traditional dynamics and kinematic model based control method.
