@@ -58,12 +58,16 @@ From SayCan and RT-2 on, many excellent work using VLA appear in robot learning,
 * The constraints are: 1. candidate keypoint for grasping and moving target. 2. sub-goal constraint for multi-tasks 3. path constraint for space-varying and pose-demanding tasks
 * The official github repo has a simulation version using OmniGibison, a platform from Isaac Sim. It doesn't have a complete version for real world implement. But many modules(vision ability to get keypoint, path constraint, sub-goal devision, etc.) are meaningful.
 
-TODO: COPA, MOKA
+TODO: COPA, MOKA, Octo
 
 
 # Recommended Resource
 1. Springer Handbook of Robotics, 2nd 2016  
-Details knowledge of many aspects of robotics. Although published in 2016, most contents are still not outdated, helping you build up basic understanding and wide-range horizon of robotics. Use it as wikipedia by utilizing the content page and Ctrl+F function
+  Details knowledge of many aspects of robotics. Although published in 2016, most contents are still not outdated, helping you build up basic understanding and wide-range horizon of robotics. Use it as wikipedia by utilizing the content page and Ctrl+F function
+
+2. Introduction to Robotics, by John Craig
+
+  A textbook for beginners in robotics.
 
 
 ---
