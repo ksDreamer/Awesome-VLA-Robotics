@@ -2,6 +2,8 @@
 
 [toc]
 
+Test git config
+
 A list and my notes about VLA(Vision Language Model) on Robotics.  
 
 The rapid development of multi-modal foundation models ([dinov2](https://ai.meta.com/blog/dino-v2-computer-vision-self-supervised-learning/), [sam2]( https://ai.meta.com/sam2/), [GPT-4o](https://openai.com/index/hello-gpt-4o/), [AnyGrasp](https://graspnet.net/anygrasp.html), etc.) has made great contribution in STEM area, including Robotics. More and more work utilize Language Model to enhance robot's ability. Although the basic executation ability(low level aspect) such as actuator and electicity is irrelevant, the perception and planning ability(high level aspect) such as sensing and long tasks arrangement can be highly improved by VLA.
