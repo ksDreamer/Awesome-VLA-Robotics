@@ -10,6 +10,8 @@ Notice: VLA here is a big range containing LLM(Large Language Model), VLM(Vision
 
 # List of VLMs/Foundation Models
 
+Following are some valuable models proposed these years.
+
 ## SAM2
 
 * Segment Anything Model 2, can segment(generate masks on) objects, 
@@ -29,9 +31,15 @@ Notice: VLA here is a big range containing LLM(Large Language Model), VLM(Vision
 
 
 
+## GraspNet
+
+* for gripper's grasping
+
+TODO: what's the grasping model for Dexterous Hand?
+
 # List of Papers/Projects
 
-Following are the list and my notes, containing the official website links and my understanding.
+Following are the list of papers/projects and my understanding of them.
 
 ## SayCan, Do As I Can, Not As I Say:  Grounding Language in Robotic Affordances
 
