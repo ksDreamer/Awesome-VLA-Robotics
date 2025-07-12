@@ -1,5 +1,7 @@
 # Awesome-VLA-Robotics
 
+[News] I will update this repo these days. 2025-07-13
+
 [toc]
 
 A list and my notes about VLA(Vision Language Model) on Robotics.  
